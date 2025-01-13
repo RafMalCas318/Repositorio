@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <!--<atom:link href="https://drive.google.com/file/d/1RzZOt2P8if40qMiWCgPq2hiw3zvv9PVd/view?usp=sharing" rel="self" type="application/rss+xml" />-->
+    <atom:link href="https://rmcproyectint.blogspot.com/" rel="self" type="application/rss+xml"/>
     <title>Lenguaje de Marcas</title>
-    <link>https://docs.google.com/document/d/1JVo4MxOSVz6C840tCKX2xTY_6Qh4ub-pocO2qtPoq3k/edit?usp=sharing</link>
+    <link>https://rmcproyectint.blogspot.com/</link>
     <description>Aqui esta el documento de Documentos de Google, que tiene los ejercicios relacionados con el temario de la sindicalización de contenidos.</description>
     <language>es-es</language>
     <lastBuildDate>Fri, 10 Jan 2025 18:03:52 +0100</lastBuildDate>
 
     <item>
       <title>Actividad 1: Identificación de Ventajas de la Sindicación de Contenidos (Criterio a)</title>
-      <link>https://docs.google.com/document/d/1JVo4MxOSVz6C840tCKX2xTY_6Qh4ub-pocO2qtPoq3k/edit?tab=t.0#bookmark=id.cdxgbz10yykq</link>
+      <link>https://rmcproyectint.blogspot.com/</link>
       <description>¿Qué es la sindicación de contenidos y cuál es su propósito principal? - Enumera al menos tres ventajas de utilizar canales RSS o Atom para distribuir información. - Explica cómo la sindicación de contenidos mejora la eficiencia en la gestión de la información. - Investiga tres sitios web que utilicen sindicación de contenidos (por ejemplo, periódicos digitales, blogs o podcasts). - Describe cómo la sindicación beneficia a los usuarios y a los propietarios del contenido.</description>
       <pubDate>Fri, 10 Jan 2025 18:03:52 +0100</pubDate>
-      <guid isPermaLink="true">https://docs.google.com/document/d/1JVo4MxOSVz6C840tCKX2xTY_6Qh4ub-pocO2qtPoq3k/edit?tab=t.0#bookmark=id.cdxgbz10yykq</guid>
+      <guid isPermaLink="true">https://rmcproyectint.blogspot.com/</guid>
       <content:encoded>¿Qué es la sindicación de contenidos y cuál es su propósito principal? Es una técnica de distribución masiva de contenidos, que supone la forma que algunos sitios web tienen de difundir los contenidos más recientes hacia aquellos usuarios que normalmente acceden a ellos sin necesidad de entrar desde la web original o de origen.</content:encoded>
     </item>
 
     <item>
       <title>Actividad 2: Definición de Ámbitos de Aplicación (Criterio b)</title>
-      <link>https://docs.google.com/document/d/1JVo4MxOSVz6C840tCKX2xTY_6Qh4ub-pocO2qtPoq3k/edit?tab=t.0#bookmark=id.cl1un5l16wu0</link>
+      <link>https://rmcproyectint.blogspot.com/</link>
       <description>¿En qué ámbitos o sectores se utiliza comúnmente la sindicación de contenidos? -  Explica cómo se aplica la sindicación en la prensa digital, los blogs y los podcasts. - Crea una tabla comparativa con al menos tres ámbitos de aplicación (por ejemplo, prensa, educación, empresas) y describe cómo se utiliza la sindicación en cada uno.</description>
       <pubDate>Fri, 10 Jan 2025 18:03:52 +0100</pubDate>
-      <guid isPermaLink="true">https://docs.google.com/document/d/1JVo4MxOSVz6C840tCKX2xTY_6Qh4ub-pocO2qtPoq3k/edit?tab=t.0#bookmark=id.cl1un5l16wu0</guid>
+      <guid isPermaLink="true">https://rmcproyectint.blogspot.com/</guid>
       <content:encoded>¿En qué ámbitos o sectores se utiliza comúnmente la sindicación de contenidos?En ámbitos periodísticos, informativos del tiempo y clima, finanzas, y páginas webs individuales.</content:encoded>
     </item>
   </channel>
