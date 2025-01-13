@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <atom:link href="https://drive.google.com/file/d/1RzZOt2P8if40qMiWCgPq2hiw3zvv9PVd/view?usp=sharing" rel="self" type="application/rss+xml" />
+    <!--<atom:link href="https://drive.google.com/file/d/1RzZOt2P8if40qMiWCgPq2hiw3zvv9PVd/view?usp=sharing" rel="self" type="application/rss+xml" />-->
     <title>Lenguaje de Marcas</title>
     <link>https://docs.google.com/document/d/1JVo4MxOSVz6C840tCKX2xTY_6Qh4ub-pocO2qtPoq3k/edit?usp=sharing</link>
     <description>Aqui esta el documento de Documentos de Google, que tiene los ejercicios relacionados con el temario de la sindicalización de contenidos.</description>
