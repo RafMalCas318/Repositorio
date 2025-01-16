@@ -1,0 +1,20 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Lenguaje de Marcas</title>
+  <link href="https://docs.google.com/document/d/1JVo4MxOSVz6C840tCKX2xTY_6Qh4ub-pocO2qtPoq3k/edit?usp=sharing" rel="alternate" />
+  <link href="https://drive.google.com/file/d/1RzZOt2P8if40qMiWCgPq2hiw3zvv9PVd/view?usp=sharing" rel="self" type="application/atom+xml" />
+  <id>https://docs.google.com/document/d/1JVo4MxOSVz6C840tCKX2xTY_6Qh4ub-pocO2qtPoq3k/edit</id>
+  <updated>2025-01-10T18:03:52Z</updated>
+  <subtitle>Aqui esta el documento de Documentos de Google, que tiene los ejercicios relacionados con el temario de la sindicalización de contenidos.</subtitle>
+
+  <entry>
+    <title>Actividad 1: Identificación de Ventajas de la Sindicación de Contenidos (Criterio a)</title>
+    <link href="https://docs.google.com/document/d/1JVo4MxOSVz6C840tCKX2xTY_6Qh4ub-pocO2qtPoq3k/edit?tab=t.0#bookmark=id.cdxgbz10yykq" />
+    <id>https://docs.google.com/document/d/1JVo4MxOSVz6C840tCKX2xTY_6Qh4ub-pocO2qtPoq3k/edit?tab=t.0#bookmark=id.cdxgbz10yykq</id>
+    <updated>2025-01-09T18:03:52Z</updated>
+    <summary>¿Qué es la sindicación de contenidos y cuál es su propósito principal? - Enumera al menos tres ventajas de utilizar canales RSS o Atom para distribuir información. - Explica cómo la sindicación de contenidos mejora la eficiencia en la gestión de la información. - Investiga tres sitios web que utilicen sindicación de contenidos (por ejemplo, periódicos digitales, blogs o podcasts). - Describe cómo la sindicación beneficia a los usuarios y a los propietarios del contenido.</summary>
+    <content type="html">¿Qué es la sindicación de contenidos y cuál es su propósito principal? Es una técnica de distribución masiva de contenidos, que supone la forma que algunos sitios web tienen de difundir los contenidos más recientes hacia aquellos usuarios que normalmente acceden a ellos sin necesidad de entrar desde la web original o de origen. </content>
+    <author>
+        <name>Rafael Malagón Castillo </name>
+    </author>
+  </entry>
+</feed>
