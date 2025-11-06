@@ -88,6 +88,7 @@ fun FavoritosScreen(
                             is PeliculaP -> ItemInfo(item.title, item.nivel_path, item.id, "pelicula")
                             is PeliculaProx -> ItemInfo(item.title, item.nivel_path, item.id, "pelicula")
                             is PeliculaValoradas -> ItemInfo(item.title, item.nivel_path, item.id, "pelicula")
+
                             is Tv -> ItemInfo(item.name, item.posterPath, item.id, "serie")
                             is TvP -> ItemInfo(item.name, item.posterPath, item.id, "serie")
                             is TvEnEmision -> ItemInfo(item.name, item.posterPath, item.id, "serie")

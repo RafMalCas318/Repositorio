@@ -28,7 +28,7 @@ interface ApiService {
     @GET("discover/movie")
     suspend fun getMovies(
         @Query("api_key") apiKey: String,
-        @Query("language") language: String = "es-ES",
+        @Query("language") language: String?,
         @Query("page") page: Int = 1,
         @QueryMap filters: Map<String, String> = emptyMap()
     ): PeliculaRes
@@ -37,7 +37,7 @@ interface ApiService {
     @GET("discover/movie")
     suspend fun getTv(
         @Query("api_key") apiKey: String,
-        @Query("language") language: String = "es-ES",
+        @Query("language") language: String?,
         @Query("page") page: Int = 1,
         @QueryMap filters: Map<String, String> = emptyMap()
     ): TvRes
@@ -45,7 +45,7 @@ interface ApiService {
     @GET("movie/popular")
     suspend fun getMoviesPopular(
         @Query("api_key") apiKey: String,
-        @Query("language") language: String = "es-ES",
+        @Query("language") language: String?,
         @Query("page") page: Int = 1,
         @QueryMap filters: Map<String, String> = emptyMap()
     ): PeliculaResP
@@ -53,7 +53,7 @@ interface ApiService {
     @GET("tv/popular")
     suspend fun getTvPopular(
         @Query("api_key") apiKey: String,
-        @Query("language") language: String = "es-ES",
+        @Query("language") language: String?,
         @Query("page") page: Int = 1,
         @QueryMap filters: Map<String, String> = emptyMap()
     ): TvResP
@@ -61,7 +61,7 @@ interface ApiService {
     @GET("movie/upcoming")
     suspend fun getMoviesProximamente(
         @Query("api_key") apiKey: String,
-        @Query("language") language: String = "es-ES",
+        @Query("language") language: String?,
         @Query("page") page: Int = 1,
         @QueryMap filters: Map<String, String> = emptyMap()
     ): PeliculaResProx
@@ -70,7 +70,7 @@ interface ApiService {
     @GET("movie/top_rated")
     suspend fun getMoviesTopRated(
         @Query("api_key") apiKey: String,
-        @Query("language") language: String = "es-ES",
+        @Query("language") language: String?,
         @Query("page") page: Int = 1,
         @QueryMap filters: Map<String, String> = emptyMap()
     ): PeliculaResValoradas // Usar la clase de respuesta existente en Pelicula.kt
@@ -78,7 +78,7 @@ interface ApiService {
     @GET("tv/on_the_air")
     suspend fun getTvEnEmision(
         @Query("api_key") apiKey: String,
-        @Query("language") language: String = "es-ES",
+        @Query("language") language: String?,
         @Query("page") page: Int = 1,
         @QueryMap filters: Map<String, String> = emptyMap()
     ): TvResEnEmision
@@ -87,37 +87,36 @@ interface ApiService {
     @GET("tv/top_rated")
     suspend fun getTvTopRated(
         @Query("api_key") apiKey: String,
-        @Query("language") language: String = "es-ES",
+        @Query("language") language: String?,
         @Query("page") page: Int = 1,
         @QueryMap filters: Map<String, String> = emptyMap()
-    ): TvResValoradas // Usar la nueva clase de respuesta en Tv.kt
-
+    ): TvResValoradas
     @GET("movie/{id}")
     suspend fun getMovieDetalles(
         @Path("id") id: Int,
         @Query("api_key") apiKey: String,
-        @Query("language") language: String = "es-ES"
+        @Query("language") language: String?
     ): PeliculaDetalles
 
     @GET("tv/{id}")
     suspend fun getTvDetalles(
         @Path("id") id: Int,
         @Query("api_key") apiKey: String,
-        @Query("language") language: String = "es-ES"
+        @Query("language") language: String?
     ): TvDetalles
 
     @GET("search/movie")
     suspend fun getbBuscarPeliculas(
         @Query("query") query: String,
         @Query("api_key") apiKey: String = "TU_API_KEY",
-        @Query("language") language: String = "es-ES"
+        @Query("language") language: String?
     ): PeliculaResBusqueda
 
     @GET("search/tv")
     suspend fun getBuscarTv(
         @Query("query") query: String,
         @Query("api_key") apiKey: String = "TU_API_KEY",
-        @Query("language") language: String = "es-ES"
+        @Query("language") language: String?
     ): TvResBusqueda
 
 }

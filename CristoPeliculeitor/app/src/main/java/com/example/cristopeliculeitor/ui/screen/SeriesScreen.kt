@@ -29,7 +29,7 @@ import com.example.cristopeliculeitor.data.model.*
 import com.example.cristopeliculeitor.viewmodel.Modelo
 import kotlinx.coroutines.delay
 
-// 🧩 Componente individual de Serie
+// Componente individual de Serie
 @Composable
 fun SerieItem(
     title: String?,
@@ -65,7 +65,7 @@ fun SerieItem(
     }
 }
 
-// ✨ Shimmer personalizado (sin accompanist)
+// Shimmer personalizado para el pestañeo
 @Composable
 fun SerieItemPlaceholder() {
     val transition = rememberInfiniteTransition(label = "shimmer")
@@ -100,7 +100,7 @@ fun SerieItemPlaceholder() {
     ) {}
 }
 
-// 🎬 Pantalla principal de Series
+// Pantalla principal de Series
 @Composable
 fun SeriesScreen(
     modelo: Modelo = viewModel(),

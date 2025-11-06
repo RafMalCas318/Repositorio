@@ -19,6 +19,7 @@ import com.example.cristopeliculeitor.viewmodel.Modelo
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
+
 @Composable
 fun BusquedaScreen(
     modelo: Modelo,

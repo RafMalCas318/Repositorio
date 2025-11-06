@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.cristopeliculeitor"
-        minSdk = 25 // 🔹 Súbelo a 25 para evitar conflictos con accompanist
+        minSdk = 25
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -96,6 +96,7 @@ dependencies {
     implementation(libs.firebase.appdistribution.gradle)
     implementation(libs.ads.mobile.sdk)
     implementation(libs.androidx.compose.animation.core)
+    implementation(libs.androidx.compose.ui.text)
 
     // Tests
     testImplementation(libs.junit)

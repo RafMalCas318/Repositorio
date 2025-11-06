@@ -14,7 +14,7 @@ data class Pelicula(
     val title: String,
     val original_titulo: String?,
     val fecha_actual: String?,
-    @SerializedName("poster_path") val nivel_path: String?, // ✅ se enlaza correctamente al JSON
+    @SerializedName("poster_path") val nivel_path: String?,
     val overview: String
 )
 

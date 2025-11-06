@@ -45,8 +45,7 @@ fun DetalleCard(
     }
 
     val esFavorito = favoritos.any {
-        (itemTipo == "pelicula" && it is com.example.cristopeliculeitor.data.model.Pelicula && it.id == itemId) ||
-                (itemTipo == "serie" && it is com.example.cristopeliculeitor.data.model.Tv && it.id == itemId)
+        (itemTipo == "pelicula" && it is com.example.cristopeliculeitor.data.model.Pelicula && it.id == itemId) || (itemTipo == "serie" && it is com.example.cristopeliculeitor.data.model.Tv && it.id == itemId)
     }
 
     Scaffold { padding ->
@@ -57,13 +56,15 @@ fun DetalleCard(
 
         Column(modifier = contentModifier) {
 
-            // 🔹 Imagen principal con los botones superpuestos
+            // Imagen principal con los botones superpuestos
             val imageUrl = if (itemTipo == "pelicula")
                 pelicula?.backdropPath ?: pelicula?.posterPath
             else
                 serie?.backdropPath ?: serie?.posterPath
 
             val baseUrl = "https://image.tmdb.org/t/p/w500"
+
+            //Contenedor de volver atras y de boton de favoritos
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -78,7 +79,7 @@ fun DetalleCard(
                     contentScale = ContentScale.Crop
                 )
 
-                // 🔙 Botón circular de volver
+                // Botón de volver (back) de encima de la imagen
                 IconButton(
                     onClick = onBackClick,
                     modifier = Modifier
@@ -95,7 +96,7 @@ fun DetalleCard(
                     )
                 }
 
-                // ❤️ Botón circular de favorito
+                //Boton de favoritos
                 val esFavorito by remember(favoritos) {
                     mutableStateOf(
                         favoritos.any {
@@ -104,9 +105,6 @@ fun DetalleCard(
                         }
                     )
                 }
-
-
-
                 IconButton(
                     onClick = {
                         if (itemTipo == "pelicula" && pelicula != null) {
@@ -125,14 +123,14 @@ fun DetalleCard(
                     Icon(
                         imageVector = if (esFavorito) Icons.Filled.Favorite else Icons.Filled.FavoriteBorder,
                         contentDescription = if (esFavorito) "Quitar de favoritos" else "Agregar a favoritos",
-                        tint = if (esFavorito) Color.Red else MaterialTheme.colorScheme.onSurface
+                        tint = if (esFavorito) Color.White else MaterialTheme.colorScheme.onSurface
                     )
                 }
             }
 
 
 
-            // 🔹 Contenido según tipo
+            // Contenido según tipo de pasado, si es pelicula o serie
             when {
                 itemTipo == "pelicula" && pelicula != null ->
                     DetallePeliculaContent(pelicula!!, Modifier)
@@ -151,6 +149,7 @@ fun DetalleCard(
     }
 }
 
+//Detalles de la pelicula titulo, detalle, sipnosis, generos, otros...
 @Composable
 fun DetallePeliculaContent(detalle: PeliculaDetalles, modifier: Modifier) {
     Column(modifier.padding(16.dp)) {
@@ -163,6 +162,7 @@ fun DetallePeliculaContent(detalle: PeliculaDetalles, modifier: Modifier) {
         Text(detalle.overview ?: "Sin sinopsis disponible", style = MaterialTheme.typography.bodyLarge)
 
         Spacer(Modifier.height(16.dp))
+
         SeccionTitulo("Géneros")
         detalle.genres?.takeIf { it.isNotEmpty() }?.let { genres ->
             Row(
@@ -183,6 +183,7 @@ fun DetallePeliculaContent(detalle: PeliculaDetalles, modifier: Modifier) {
         } ?: Text("Sin géneros disponibles")
 
         Spacer(Modifier.height(16.dp))
+
         SeccionTitulo("Detalles")
         DetalleTexto("Duración", "${detalle.runtime ?: 0} min")
         DetalleTexto("Lanzamiento", detalle.releaseDate ?: "Desconocido")
@@ -193,6 +194,7 @@ fun DetallePeliculaContent(detalle: PeliculaDetalles, modifier: Modifier) {
     }
 }
 
+//Detalles de la serie nombre, detalle, sipnosis, generos, otros...
 @Composable
 fun DetalleSerieContent(detalle: TvDetalles, modifier: Modifier) {
     Column(modifier.padding(16.dp)) {
@@ -235,6 +237,8 @@ fun DetalleSerieContent(detalle: TvDetalles, modifier: Modifier) {
     }
 }
 
+
+//Tipo de texto con estilo especifico para detalles y genero.
 @Composable
 private fun SeccionTitulo(titulo: String) {
     Text(
@@ -245,6 +249,7 @@ private fun SeccionTitulo(titulo: String) {
     )
 }
 
+//Tipo de texto con estilo especifico para los demas.
 @Composable
 private fun DetalleTexto(label: String, valor: String) {
     Column(

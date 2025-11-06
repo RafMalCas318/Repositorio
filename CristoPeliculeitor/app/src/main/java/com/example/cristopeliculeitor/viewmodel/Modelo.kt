@@ -1,5 +1,6 @@
 package com.example.cristopeliculeitor.viewmodel
 
+import java.util.Locale //idioma
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.cristopeliculeitor.data.model.*
@@ -12,7 +13,6 @@ import kotlinx.coroutines.launch
 class Modelo : ViewModel() {
 
     private val apiKey = "67ecb1a2aaf8123195a0f30fe9587324"
-    private val language = "es-ES"
     private val api = RetrofitCliente.api
 
     // ----------------- Flujos de datos -----------------
@@ -56,6 +56,16 @@ class Modelo : ViewModel() {
     private val _resultadosBusquedaTv = MutableStateFlow<List<TvBusqueda>>(emptyList())
     val resultadosBusquedaTv: StateFlow<List<TvBusqueda>> = _resultadosBusquedaTv
 
+
+    private val tmdbLanguage: String
+        get() {
+            val deviceLang = Locale.getDefault().language
+            return when (deviceLang) {
+                "es" -> "es-ES"
+                "en" -> "en-US"
+                else -> "en-US"
+            }
+        }
     // ----------------- Películas -----------------
     fun cargarPeliculaPopular() {
         viewModelScope.launch {
@@ -64,7 +74,7 @@ class Modelo : ViewModel() {
                 var page = 1
                 var totalPaginas: Int
                 do {
-                    val response = api.getMoviesPopular(apiKey, language, page)
+                    val response = api.getMoviesPopular(apiKey, tmdbLanguage, page)
                     totalPaginas = response.total_paginas
                     lista.addAll(response.results)
                     page++
@@ -83,7 +93,7 @@ class Modelo : ViewModel() {
                 var page = 1
                 var totalPaginas: Int
                 do {
-                    val response = api.getMoviesProximamente(apiKey, language, page)
+                    val response = api.getMoviesProximamente(apiKey, tmdbLanguage, page)
                     totalPaginas = response.total_paginas
                     lista.addAll(response.results)
                     page++
@@ -102,7 +112,7 @@ class Modelo : ViewModel() {
                 var page = 1
                 var totalPaginas: Int
                 do {
-                    val response = api.getMoviesTopRated(apiKey, language, page)
+                    val response = api.getMoviesTopRated(apiKey, tmdbLanguage, page)
                     totalPaginas = response.total_paginas
                     lista.addAll(response.results)
                     page++
@@ -122,7 +132,7 @@ class Modelo : ViewModel() {
                 var page = 1
                 var totalPaginas: Int
                 do {
-                    val response = api.getTvPopular(apiKey, language, page)
+                    val response = api.getTvPopular(apiKey, tmdbLanguage, page)
                     totalPaginas = response.totalPaginas
                     lista.addAll(response.results)
                     page++
@@ -141,7 +151,7 @@ class Modelo : ViewModel() {
                 var page = 1
                 var totalPaginas: Int
                 do {
-                    val response = api.getTvEnEmision(apiKey, language, page)
+                    val response = api.getTvEnEmision(apiKey, tmdbLanguage, page)
                     totalPaginas = response.totalPaginas
                     lista.addAll(response.results)
                     page++
@@ -160,7 +170,7 @@ class Modelo : ViewModel() {
                 var page = 1
                 var totalPaginas: Int
                 do {
-                    val response = api.getTvTopRated(apiKey, language, page)
+                    val response = api.getTvTopRated(apiKey, tmdbLanguage, page)
                     totalPaginas = response.totalPaginas
                     lista.addAll(response.results)
                     page++
@@ -176,7 +186,7 @@ class Modelo : ViewModel() {
     fun cargarDetallesMovie(id: Int) {
         viewModelScope.launch {
             try {
-                _detallePelicula.value = api.getMovieDetalles(id, apiKey, language)
+                _detallePelicula.value = api.getMovieDetalles(id, apiKey, tmdbLanguage)
             } catch (e: Exception) {
                 e.printStackTrace()
             }
@@ -186,7 +196,7 @@ class Modelo : ViewModel() {
     fun cargarDetallesTv(id: Int) {
         viewModelScope.launch {
             try {
-                _detalleTv.value = api.getTvDetalles(id, apiKey, language)
+                _detalleTv.value = api.getTvDetalles(id, apiKey, tmdbLanguage)
             } catch (e: Exception) {
                 e.printStackTrace()
             }
@@ -272,7 +282,7 @@ class Modelo : ViewModel() {
                 _resultadosBusquedaMovie.value = emptyList()
             } else {
                 try {
-                    val respuesta = api.getbBuscarPeliculas(query, apiKey, language)
+                    val respuesta = api.getbBuscarPeliculas(query, apiKey, tmdbLanguage)
                     _resultadosBusquedaMovie.value = respuesta.results
                 } catch (e: Exception) {
                     e.printStackTrace()
@@ -288,7 +298,7 @@ class Modelo : ViewModel() {
                 _resultadosBusquedaTv.value = emptyList()
             } else {
                 try {
-                    val respuesta = api.getBuscarTv(query, apiKey, language)
+                    val respuesta = api.getBuscarTv(query, apiKey, tmdbLanguage)
                     _resultadosBusquedaTv.value = respuesta.resultsTv
                 } catch (e: Exception) {
                     e.printStackTrace()

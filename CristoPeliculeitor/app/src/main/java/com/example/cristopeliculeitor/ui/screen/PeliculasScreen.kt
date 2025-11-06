@@ -29,6 +29,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 
 
+//Item de pelicula.
 @Composable
 fun PeliculaItem(
     title: String,
@@ -64,6 +65,8 @@ fun PeliculaItem(
     }
 }
 
+
+//Evitar parpadeo de la pantalla.
 @Composable
 fun PeliculaItemPlaceholder() {
     // 🔹 Animación del brillo del shimmer
@@ -101,7 +104,7 @@ fun PeliculaItemPlaceholder() {
 }
 
 
-// 🔸 Pantalla principal
+// Pantalla principal
 @Composable
 fun PeliculasScreen(
     modelo: Modelo = viewModel(),
@@ -113,7 +116,7 @@ fun PeliculasScreen(
 
     var isLoading by remember { mutableStateOf(true) }
 
-    // 🔸 Carga inicial (solo una vez)
+    // Carga inicial (solo una vez)
     LaunchedEffect(Unit) {
         modelo.cargarPeliculaPopular()
         modelo.cargarPeliculaProximamente()
